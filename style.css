@@ -1,0 +1,218 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+   
+    
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    direction: rtl;
+}
+/********************header الصفحة الرئيسية******************************/ 
+header
+{
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(to right,rgb(111, 107, 139), rgb(141, 206, 223));
+}
+
+
+
+
+#Logo
+{
+    width: 10%;
+    height: 100%;
+    float: right;
+    background-color: #e5ded7;
+    padding-left: 2%;
+    align-items: center;
+}
+
+#idheaderimag_logo
+{
+ height: 100%;
+ border-radius: 50%;
+}
+
+
+
+
+
+.nassaim-img
+{
+    width: 100%;
+    height: 500px;
+    background-image: url("imag/Plan1.png");
+    background-size: cover;
+    position: relative;
+}
+
+
+
+
+#idh1Heder
+{
+    float: left;
+    line-height: 100px ;
+    padding:0 15px ;
+}
+
+
+.class_nav_a
+{
+ text-decoration: none;
+   color: #000;
+  font-weight: bold;
+  display:inline-block;
+
+}
+.class_nav_li
+{
+    display:inline-block ;
+    line-height: 100px;
+    width: 100px;
+    text-align: center;
+
+}
+.class_nav
+{
+    width: 70%;
+   text-align: center;
+}
+.class_nav_a:hover
+{
+  background-color:  rgb(112, 165, 209);
+  color: #fafafa;
+  height: 100%;
+  width: 100%;
+
+}
+
+article {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+    overflow: hidden; /* Clearfix for floated elements */
+  }
+
+  .profile-image {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    border-radius: 50%;
+    border: 3px solid #fff; /* Border color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    float: left; /* Float the image to the left */
+    margin-right: 15px; /* Add some spacing between the image and content */
+    object-fit: cover;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+/******************* إشراقات   ***********************/
+
+
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image {
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: 350px;
+    display: block;
+}
+
+.image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+
+
+
+/******************************************/
+
+@keyframes changeBackround
+{
+    0%
+    {
+        background-color: white;
+    }
+    50%
+    {
+        background-color: rgba(169, 193, 204, 0.281);
+    }
+    100%
+    {
+        background-color: rgb(140, 186, 224);
+    }
+}
+
+
+@media only screen and (min-width:940px) and (max-width:1070px )
+{
+   
+    #id_article_1
+    {
+        width: 65%;
+    }
+    .class_aside_1
+    {
+        width: 35%;
+    }
+}
+@media only screen and  (max-width:940px ) 
+{
+    
+}
+@media only screen and  (max-width:801px ) 
+{
+   
+}
+@media only screen and  (max-width:500px ) 
+{
+  
+}
+@media only screen and (orientation:landscape) and (max-width:500px)
+{
+
+}
+#idPrint
+{
+    display: none;
+}
+@media print
+{
+  .class_nav
+  {
+      display: none;
+
+  }
+  #idPrint
+  {
+      display: block;
+  }
+}

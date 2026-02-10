@@ -55,6 +55,7 @@ header {
 #Logo {
     width: auto;
     height: 100%;
+       margin: 10px;
     float: right;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 10px 25px;
@@ -481,3 +482,4 @@ a:hover {
         transition-duration: 0.01ms !important;
     }
 }
+

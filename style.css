@@ -1,141 +1,284 @@
-*
-{
-    padding: 0%;
-    margin: 0%;
-   
-    
+/* ============================================
+   NASSAIM WEBSITE - PROFESSIONAL CSS
+   ============================================ */
+
+/* CSS Variables */
+:root {
+    --primary-color: #2c5f7f;
+    --secondary-color: #4a9ec4;
+    --accent-color: #d4af37;
+    --text-dark: #2d2d2d;
+    --text-light: #6b6b6b;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 20px;
+    font-family: 'Cairo', 'Segoe UI', 'Arial', sans-serif;
+    line-height: 1.8;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
     direction: rtl;
 }
-/********************header الصفحة الرئيسية******************************/ 
-header
-{
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     height: 100px;
     width: 100%;
-    background-image: linear-gradient(to right,rgb(111, 107, 139), rgb(141, 206, 223));
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
-
-
-
-#Logo
-{
-    width: 10%;
+#Logo {
+    width: auto;
     height: 100%;
     float: right;
-    background-color: #e5ded7;
-    padding-left: 2%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px 25px;
+    border-radius: var(--border-radius);
+    display: flex;
     align-items: center;
+    transition: var(--transition);
 }
 
-#idheaderimag_logo
-{
- height: 100%;
- border-radius: 50%;
+#Logo:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
+#idheaderimag_logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    transition: var(--transition);
+}
 
+#idheaderimag_logo:hover {
+    transform: rotate(360deg) scale(1.1);
+}
 
+/* Navigation */
+.class_nav {
+    flex-grow: 1;
+    text-align: center;
+}
 
+.class_nav ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 10px;
+}
 
-.nassaim-img
-{
+.class_nav_li {
+    display: inline-block;
+}
+
+.class_nav_a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.class_nav_a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Hero Banner */
+.nassaim-img {
     width: 100%;
     height: 500px;
     background-image: url("imag/Plan1.png");
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
 }
 
-
-
-
-#idh1Heder
-{
-    float: left;
-    line-height: 100px ;
-    padding:0 15px ;
+.nassaim-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(44, 95, 127, 0.6) 0%, rgba(74, 158, 196, 0.5) 100%);
 }
 
-
-.class_nav_a
-{
- text-decoration: none;
-   color: #000;
-  font-weight: bold;
-  display:inline-block;
-
-}
-.class_nav_li
-{
-    display:inline-block ;
-    line-height: 100px;
-    width: 100px;
-    text-align: center;
-
-}
-.class_nav
-{
-    width: 70%;
-   text-align: center;
-}
-.class_nav_a:hover
-{
-  background-color:  rgb(112, 165, 209);
-  color: #fafafa;
-  height: 100%;
-  width: 100%;
-
-}
-
+/* Articles */
 article {
-    border: 1px solid #ddd;
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    margin: 40px auto;
+    padding: 40px;
+    max-width: 1200px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    transform: scaleY(0);
+    transition: var(--transition);
+}
+
+article:hover::before {
+    transform: scaleY(1);
+}
+
+article:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+article h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+    line-height: 1.4;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+article h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to left, var(--accent-color), transparent);
+    border-radius: 2px;
+}
+
+article p {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--text-light);
     margin-bottom: 20px;
-    padding: 10px;
-    overflow: hidden; /* Clearfix for floated elements */
-  }
+    text-align: justify;
+}
 
-  .profile-image {
-    width: 100px; /* Adjust the width as needed */
-    height: 100px; /* Adjust the height as needed */
+/* Profile Image */
+.profile-image {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 3px solid #fff; /* Border color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    float: left; /* Float the image to the left */
-    margin-right: 15px; /* Add some spacing between the image and content */
+    border: 4px solid var(--accent-color);
+    box-shadow: var(--shadow-md);
+    float: left;
+    margin: 0 0 20px 25px;
     object-fit: cover;
-  }
+    transition: var(--transition);
+}
 
-  a {
-    color: #007bff;
+.profile-image:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Links */
+a {
+    color: var(--secondary-color);
     text-decoration: none;
-    font-weight: bold;
-  }
-/******************* إشراقات   ***********************/
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+}
 
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
 
+a:hover::after {
+    width: 100%;
+}
 
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Image Gallery */
 .image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .image {
-    margin: 10px;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.image:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
 }
 
 .image img {
     width: 100%;
     height: 350px;
+    object-fit: cover;
     display: block;
+    transition: var(--transition);
+}
+
+.image:hover img {
+    transform: scale(1.1);
 }
 
 .image::before {
@@ -145,74 +288,208 @@ article {
     left: 0;
     width: 100%;
     height: 100%;
-
+    background: linear-gradient(to bottom, transparent 0%, rgba(44, 95, 127, 0.7) 100%);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 1;
 }
 
-
-
-
-
-
-/******************************************/
-
-@keyframes changeBackround
-{
-    0%
-    {
-        background-color: white;
-    }
-    50%
-    {
-        background-color: rgba(169, 193, 204, 0.281);
-    }
-    100%
-    {
-        background-color: rgb(140, 186, 224);
-    }
+.image:hover::before {
+    opacity: 1;
 }
 
-
-@media only screen and (min-width:940px) and (max-width:1070px )
-{
-   
-    #id_article_1
-    {
-        width: 65%;
+/* Responsive Design */
+@media only screen and (max-width: 1070px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        padding: 15px 20px;
     }
-    .class_aside_1
-    {
-        width: 35%;
-    }
-}
-@media only screen and  (max-width:940px ) 
-{
     
+    #Logo {
+        width: auto;
+        margin-bottom: 15px;
+    }
+    
+    .class_nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    article {
+        padding: 30px;
+        margin: 30px 20px;
+    }
 }
-@media only screen and  (max-width:801px ) 
-{
-   
-}
-@media only screen and  (max-width:500px ) 
-{
-  
-}
-@media only screen and (orientation:landscape) and (max-width:500px)
-{
 
+@media only screen and (max-width: 940px) {
+    .nassaim-img {
+        height: 400px;
+        background-attachment: scroll;
+    }
+    
+    article h2 {
+        font-size: 1.75rem;
+    }
+    
+    .image-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
 }
-#idPrint
-{
+
+@media only screen and (max-width: 801px) {
+    header {
+        padding: 12px 15px;
+    }
+    
+    .class_nav_a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    article {
+        padding: 25px;
+        margin: 25px 15px;
+    }
+    
+    article h2 {
+        font-size: 1.5rem;
+    }
+    
+    article p {
+        font-size: 1rem;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        margin: 0 0 15px 15px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header {
+        height: auto;
+    }
+    
+    #Logo {
+        padding: 8px 15px;
+    }
+    
+    #idheaderimag_logo {
+        height: 50px;
+        width: 50px;
+    }
+    
+    .class_nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+    
+    .class_nav_li {
+        width: 100%;
+    }
+    
+    .class_nav_a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+    
+    .nassaim-img {
+        height: 250px;
+    }
+    
+    article {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    article h2 {
+        font-size: 1.35rem;
+    }
+    
+    .profile-image {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+    
+    .image-container {
+        grid-template-columns: 1fr;
+        padding: 20px 10px;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 500px) {
+    .nassaim-img {
+        height: 200px;
+    }
+    
+    header {
+        height: 70px;
+    }
+    
+    #idheaderimag_logo {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+/* Print Styles */
+#idPrint {
     display: none;
 }
-@media print
-{
-  .class_nav
-  {
-      display: none;
 
-  }
-  #idPrint
-  {
-      display: block;
-  }
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    header,
+    .class_nav,
+    .nassaim-img {
+        display: none;
+    }
+    
+    #idPrint {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    
+    article {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+        margin-bottom: 30px;
+    }
+    
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+    
+    .profile-image {
+        filter: grayscale(100%);
+    }
+}
+
+/* Accessibility */
+*:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
